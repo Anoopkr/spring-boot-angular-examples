@@ -1,12 +1,12 @@
 import requests
-
+import os
 
 def check_pr():
     # Set the repository owner and name
     owner = "Anoopkr"
     repo = "spring-boot-angular-examples"
 
-    PAT - os.getenv("PAT")
+    PAT = os.getenv("PAT")
     print(PAT)
 
     # Set the authentication parameters (if necessary)
