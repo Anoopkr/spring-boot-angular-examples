@@ -48,7 +48,7 @@ def check_pr():
                         result = get_string_between(comment["body"], questions[count], questions[count+1])
                         if len(result.strip()) < 3:
                             print(f"{questions[count]} not answered")
-                        # print(len(result.strip()))
+                            raise PRException(f"{questions[count]} not answered")
                         count += 1
 
                     # for index, question in enumerate(questions):
@@ -57,6 +57,7 @@ def check_pr():
                     #     print(result)
                 else:
                     print('Not all questions are present in the description') 
+                    raise PRException("Not all questions are present in the description")
 
     else:
         # Print the error message
