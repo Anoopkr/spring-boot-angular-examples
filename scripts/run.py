@@ -1,16 +1,15 @@
 import requests
-import os
+
+class PRException(Exception):
+    pass
 
 def check_pr():
     # Set the repository owner and name
     owner = "Anoopkr"
     repo = "spring-boot-angular-examples"
 
-    PAT = os.getenv("PAT")
-    print(PAT)
-
     # Set the authentication parameters (if necessary)
-    auth = ("Anoopkr", PAT)
+    auth = ("Anoopkr", "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")
 
     # Set the headers
     headers = {"Accept": "application/vnd.github+json"}
@@ -35,10 +34,10 @@ def check_pr():
                 f"{pull_request['url']}", auth=auth, headers=headers)
             if response.status_code == 200:
                 comment = response.json()
-                # print(comment["body"])
+                print(comment["body"])
                 if comment["body"] is None:
                      print(f"No description")
-                     return
+                     raise PRException("No description")
                 if all_elements_in_string(questions, comment["body"]):
                     print('All questions are present in the description')
                     count = 0
