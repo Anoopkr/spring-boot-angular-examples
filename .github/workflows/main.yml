@@ -25,4 +25,5 @@ jobs:
           python ./scripts/run.py
         env: # Or as an environment variable  
           PAT: ${{ secrets.PAT }}
+          PR_NUM: ${{ github.event.pull_request.number }}
        
