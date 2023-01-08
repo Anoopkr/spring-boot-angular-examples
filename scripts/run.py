@@ -38,6 +38,7 @@ def check_pr():
                 comment = response.json()
                 print(comment["body"])
                 if comment["body"] is None:
+                     print(os.getenv("PR_NUM"))
                      print(f"No description")
                      raise PRException("No description")
                 if all_elements_in_string(questions, comment["body"]):
