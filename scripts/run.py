@@ -36,6 +36,9 @@ def check_pr():
             if response.status_code == 200:
                 comment = response.json()
                 # print(comment["body"])
+                if comment["body"] is None:
+                     print(f"No description")
+                     return
                 if all_elements_in_string(questions, comment["body"]):
                     print('All questions are present in the description')
                     count = 0
