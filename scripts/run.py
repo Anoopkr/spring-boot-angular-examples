@@ -6,8 +6,11 @@ def check_pr():
     owner = "Anoopkr"
     repo = "spring-boot-angular-examples"
 
+    PAT - os.getenv("PAT")
+    print(PAT)
+
     # Set the authentication parameters (if necessary)
-    auth = ("Anoopkr", "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")
+    auth = ("Anoopkr", PAT)
 
     # Set the headers
     headers = {"Accept": "application/vnd.github+json"}
