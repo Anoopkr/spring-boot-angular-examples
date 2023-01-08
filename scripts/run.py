@@ -1,4 +1,5 @@
 import requests
+import os
 
 class PRException(Exception):
     pass
@@ -9,7 +10,8 @@ def check_pr():
     repo = "spring-boot-angular-examples"
 
     # Set the authentication parameters (if necessary)
-    auth = ("Anoopkr", "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")
+    PAT = os.getenv("PAT")
+    auth = ("Anoopkr", PAT)
 
     # Set the headers
     headers = {"Accept": "application/vnd.github+json"}
