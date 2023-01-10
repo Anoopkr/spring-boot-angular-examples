@@ -17,7 +17,7 @@ def check_pr():
     headers = {"Accept": "application/vnd.github+json"}
 
     questions = ["Is this a fix for something broken from the user perspective? What is broken?", "What is the new behavior after the fix?", "Root cause. When did the breakage start to happen in production?",
-                "How/Where did you test your change?", "Link to other PRs dependent to this change (config, client, server)", "Previous PRs(list all) that this is a fix for", "Which other areas should QA do regression"]
+                "How/Where did you test your change?", "Link to other PRs dependent to this change (config, client, server)", "Previous PRs(list all) that this is a fix for", "Which other areas should QA do regression on?"]
 
     pr_url = f"https://api.github.com/repos/{owner}/{repo}/pulls/{os.getenv('PR_NUM')}"
     print(pr_url)
