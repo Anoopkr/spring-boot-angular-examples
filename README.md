@@ -1,1 +1,1 @@
-# spring-boot-angular-test
+# spring-boot-angular
