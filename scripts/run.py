@@ -42,7 +42,9 @@ def check_pr():
             
             last_question_ans = get_string_after(comment["body"], questions[-1])
             print(last_question_ans)                                                                        
-            
+            if(len(last_question_ans) < 3):
+                print(f"{questions[-1]} not answered")
+                raise PRException(f"{questions[-1]} not answered")
             # for index, question in enumerate(questions):
             #     # print(question)
             #     result = get_string_between(comment["body"], questions[index], questions[index+1])
