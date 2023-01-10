@@ -40,7 +40,7 @@ def check_pr():
                     raise PRException(f"{questions[count]} not answered")
                 count += 1
             
-            last_question_ans = get_string_after(comment["body"], questions[-1)
+            last_question_ans = get_string_after(comment["body"], questions[-1])
             print(last_question_ans)                                                                        
             
             # for index, question in enumerate(questions):
