@@ -1,1 +1,1 @@
-# spring-boot-angular-examples
+# spring-boot-angular
