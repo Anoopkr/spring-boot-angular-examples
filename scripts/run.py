@@ -45,8 +45,8 @@ def check_pr():
             #     result = get_string_between(comment["body"], questions[index], questions[index+1])
             #     print(result)
         else:
-            print('Not all questions are present in the description') 
-            raise PRException("Not all questions are present in the description")
+            print('Some of the questions are not present in the description') 
+            raise PRException("Some of the questions are not present in the description")
 
 
 
