@@ -39,7 +39,10 @@ def check_pr():
                     print(f"{questions[count]} not answered")
                     raise PRException(f"{questions[count]} not answered")
                 count += 1
-
+            
+            last_question_ans = get_string_after(comment["body"], questions[-1)
+            print(last_question_ans)                                                                        
+            
             # for index, question in enumerate(questions):
             #     # print(question)
             #     result = get_string_between(comment["body"], questions[index], questions[index+1])
@@ -62,5 +65,12 @@ def get_string_between(paragraph, start_string, end_string):
     if end_index == -1:
         return ""
     return paragraph[start_index + len(start_string):end_index]
+
+def get_string_after(string, substring):
+    try:
+        index = string.index(substring)
+        return string[index + len(substring):]
+    except ValueError:
+        return ''
 
 check_pr()
